@@ -1,275 +1,269 @@
 # VulnScope
 
-VulnScope est un scanner de reconnaissance et d'analyse de vulnérabilités écrit en Python. Il automatise les premières étapes d'un audit en combinant l'énumération réseau, le fingerprinting des technologies, les vérifications de sécurité web et la recherche de CVE connues.
+<p align="center">
+  <img src="https://img.shields.io/github/stars/Rorzz129/VulnScope?style=for-the-badge">
+  <img src="https://img.shields.io/github/forks/Rorzz129/VulnScope?style=for-the-badge">
+  <img src="https://img.shields.io/github/issues/Rorzz129/VulnScope?style=for-the-badge">
+  <img src="https://img.shields.io/github/license/Rorzz129/VulnScope?style=for-the-badge">
+  <img src="https://img.shields.io/github/last-commit/Rorzz129/VulnScope?style=for-the-badge">
+</p>
 
-Le projet est conçu pour fournir une vue d'ensemble rapide d'une cible afin d'identifier les services exposés, les technologies utilisées et les vulnérabilités publiques associées.
+<p align="center">
+Network Reconnaissance • Technology Fingerprinting • Web Security Analysis • CVE Correlation
+</p>
 
 ---
 
-# Fonctionnalités
+## Overview
 
-## Reconnaissance
+VulnScope est un scanner de reconnaissance et d'analyse de vulnérabilités développé en Python.
 
-* Résolution automatique IP ↔ Nom de domaine
-* Détection du nom d'hôte
-* Scan DNS complet
+Il automatise les premières étapes d'un audit de sécurité en combinant plusieurs techniques afin d'identifier les services exposés, les technologies utilisées, les mauvaises configurations de sécurité ainsi que les vulnérabilités publiques connues.
 
-  * A
-  * AAAA
-  * MX
-  * NS
-  * TXT
-  * CNAME
+---
 
-## Analyse HTTP
+# Features
 
-* Détection HTTP / HTTPS
-* Suivi des redirections
-* Analyse des en-têtes HTTP
-* Détection du serveur Web
-* Analyse du code de réponse
+## Target Analysis
 
-## Découverte des services
+- IP / Domain support
+- Automatic DNS resolution
+- Hostname detection
 
-* Scan Nmap
-* Détection des ports ouverts
-* Identification des services
-* Détection des versions
-* Identification des produits
+## DNS Enumeration
 
-## Fingerprinting
+- A
+- AAAA
+- MX
+- NS
+- TXT
+- CNAME
 
-Fusion des informations provenant de plusieurs sources :
+## HTTP Analysis
 
-* Nmap
-* En-têtes HTTP
-* HTML
-* Cookies
-* Ressources CSS
-* Ressources JavaScript
-* Analyse JavaScript
+- HTTP / HTTPS detection
+- Redirect handling
+- Header analysis
+- Server identification
+- Response analysis
 
-Détection de nombreuses technologies telles que :
+## Port & Service Discovery
 
-* Apache
-* Nginx
-* IIS
-* OpenSSH
-* PHP
-* Node.js
-* Cloudflare
-* Vue.js
-* Nuxt
-* React
-* Angular
-* Next.js
-* Bootstrap
-* jQuery
-* Axios
-* Webpack
+- Nmap integration
+- Open port discovery
+- Service detection
+- Product identification
+- Version detection
 
-Les technologies détectées sont automatiquement fusionnées afin d'éviter les doublons et de conserver les meilleures informations disponibles.
+## Technology Fingerprinting
 
-## Analyse JavaScript
+Detection from multiple sources:
 
-* Téléchargement automatique des fichiers JavaScript
-* Détection des frameworks
-* Détection des bibliothèques
-* Recherche des versions lorsqu'elles sont disponibles
-* Détection des fichiers Source Map
-* Fusion avec les autres méthodes de fingerprinting
+- Nmap
+- HTTP Headers
+- HTML
+- Cookies
+- CSS Resources
+- JavaScript Resources
+- JavaScript Analysis
 
-## Analyse de sécurité Web
+Supported technologies include:
 
-Vérification automatique de nombreux points de sécurité :
+- Apache
+- Nginx
+- IIS
+- PHP
+- OpenSSH
+- Node.js
+- Cloudflare
+- Vue.js
+- Nuxt
+- React
+- Angular
+- Next.js
+- Bootstrap
+- jQuery
+- Axios
+- Webpack
+
+## JavaScript Analysis
+
+- JavaScript resource discovery
+- Framework detection
+- Library detection
+- Version extraction
+- Source Map detection
+- Evidence collection
+
+## Web Security Checks
 
 ### Security Headers
 
-* Content-Security-Policy
-* Strict-Transport-Security
-* X-Frame-Options
-* X-Content-Type-Options
-* Referrer-Policy
-* Permissions-Policy
+- Content-Security-Policy
+- Strict-Transport-Security
+- X-Frame-Options
+- X-Content-Type-Options
+- Referrer-Policy
+- Permissions-Policy
 
 ### Cookies
 
-* HttpOnly
-* Secure
-* SameSite
+- HttpOnly
+- Secure
+- SameSite
 
 ### CORS
 
-* Configuration CORS
-* Wildcards
-* Credentials
+- Wildcard detection
+- Credential checks
 
 ### HTTP Methods
 
-* Vérification des méthodes HTTP exposées
+- Enabled HTTP methods
 
-### Sensitive Paths
+### Sensitive Files
 
-Recherche de ressources publiques telles que :
+- robots.txt
+- sitemap.xml
+- Common sensitive paths
 
-* robots.txt
-* sitemap.xml
-* autres chemins connus
+Each finding contains:
 
-Chaque résultat contient :
+- Identifier
+- Severity
+- Confidence
+- Evidence
+- Recommendation
 
-* identifiant
-* sévérité
-* niveau de confiance
-* catégorie
-* URL
-* preuve
-* recommandation
+## CVE Correlation
 
-## Recherche de CVE
-
-Pour chaque technologie disposant d'une version précise :
-
-* Recherche du CPE exact
-* Correspondance avec la base NVD
-* Recherche des CVE applicables
-* Score CVSS
-* Sévérité
-* Description
-
-Les technologies sans version exacte sont volontairement ignorées afin d'éviter les faux positifs.
+- Automatic CPE lookup
+- NVD integration
+- CVSS score
+- Severity
+- Description
+- Confirmed CVEs only
 
 ---
 
 # Installation
 
-## Cloner le projet
+Clone the repository:
 
 ```bash
 git clone https://github.com/USERNAME/VulnScope.git
 cd VulnScope
 ```
 
-## Créer un environnement virtuel
-
-### Windows
+Create a virtual environment:
 
 ```bash
 python -m venv .venv
 .venv\Scripts\activate
 ```
 
-### Linux
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-```
-
-## Installer les dépendances
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Installer Nmap
+Install **Nmap** and ensure it is available in your PATH.
 
-### Windows
+---
 
-Installer Nmap puis l'ajouter au PATH.
-
-# Utilisation
-
-Lancer VulnScope :
+# Usage
 
 ```bash
 python main.py
 ```
 
-Entrer une cible :
+Example targets:
 
-```text
+```
 google.com
 ```
 
-ou
-
-```text
+```
 8.8.8.8
 ```
 
 ---
 
-# Exemple
+# Scan Workflow
 
-```text
+```
 Target
-        │
-        ▼
+   │
+   ▼
 DNS Enumeration
-        │
-        ▼
+   │
+   ▼
 HTTP Analysis
-        │
-        ▼
-Port & Service Discovery
-        │
-        ▼
+   │
+   ▼
+Port Discovery
+   │
+   ▼
 Technology Fingerprinting
-        │
-        ▼
+   │
+   ▼
 Web Security Analysis
-        │
-        ▼
-CVE Analysis
-        │
-        ▼
+   │
+   ▼
+CVE Correlation
+   │
+   ▼
 Summary
 ```
 
 ---
 
-# Résultats
+# Example Output
 
-À la fin du scan, VulnScope affiche notamment :
-
-* Informations sur la cible
-* Enregistrements DNS
-* Services détectés
-* Technologies identifiées
-* Résultats des contrôles de sécurité
-* CVE confirmées
-* Résumé global
-
----
-
-# Technologies utilisées
-
-* Python 3
-* Requests
-* BeautifulSoup
-* Nmap
-* Colorama
-* urllib3
+- Target Information
+- DNS Records
+- HTTP Analysis
+- Open Ports
+- Service Detection
+- Technology Fingerprinting
+- Web Security Findings
+- Confirmed CVEs
+- Scan Summary
 
 ---
 
-# Objectifs
+# Technologies Used
 
-* Automatiser la phase de reconnaissance.
-* Réduire le temps d'analyse initial.
-* Corréler les technologies détectées avec les vulnérabilités publiques.
-* Fournir des résultats lisibles directement en console.
-* Limiter les faux positifs grâce à une corrélation basée sur les versions.
-
----
-
-# Avertissement
-
-VulnScope est destiné à être utilisé uniquement sur des systèmes dont vous êtes propriétaire ou pour lesquels vous disposez d'une autorisation explicite. L'utilisateur est seul responsable de l'utilisation qu'il fait de cet outil.
+- Python
+- Requests
+- BeautifulSoup4
+- Nmap
+- Colorama
 
 ---
 
-# Licence
+# Roadmap
 
-Ce projet est distribué sous licence MIT.
+- Improved JavaScript fingerprinting
+- Additional technology signatures
+- Export to JSON
+- Export to HTML
+- Export to PDF
+- Screenshot capture
+- SSL/TLS analysis
+- Additional web security checks
+
+---
+
+# Disclaimer
+
+VulnScope must only be used on systems you own or for which you have explicit authorization to perform security assessments.
+
+The author assumes no responsibility for misuse.
+
+---
+
+# License
+
+MIT License
