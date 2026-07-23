@@ -1,11 +1,11 @@
 # VulnScope
 
 <p align="center">
-  <img src="https://img.shields.io/github/stars/Rorzz129/VulnScope?style=for-the-badge">
-  <img src="https://img.shields.io/github/forks/Rorzz129/VulnScope?style=for-the-badge">
-  <img src="https://img.shields.io/github/issues/Rorzz129/VulnScope?style=for-the-badge">
-  <img src="https://img.shields.io/github/license/Rorzz129/VulnScope?style=for-the-badge">
-  <img src="https://img.shields.io/github/last-commit/Rorzz129/VulnScope?style=for-the-badge">
+  <img src="https://img.shields.io/github/stars/Rorzz129/A.C.RVuln?style=for-the-badge">
+  <img src="https://img.shields.io/github/forks/Rorzz129/A.C.RVuln?style=for-the-badge">
+  <img src="https://img.shields.io/github/issues/Rorzz129/A.C.RVuln?style=for-the-badge">
+  <img src="https://img.shields.io/github/license/Rorzz129/A.C.RVuln?style=for-the-badge">
+  <img src="https://img.shields.io/github/last-commit/Rorzz129/A.C.RVuln?style=for-the-badge">
 </p>
 
 <p align="center">
