@@ -151,7 +151,7 @@ Each finding contains:
 Clone the repository:
 
 ```bash
-git clone https://github.com/USERNAME/VulnScope.git
+git clone https://github.com/Rorzz129/A.C.RVuln.git
 cd VulnScope
 ```
 
