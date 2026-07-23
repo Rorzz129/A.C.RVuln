@@ -20,6 +20,8 @@ VulnScope est un scanner de reconnaissance et d'analyse de vulnérabilités dév
 
 Il automatise les premières étapes d'un audit de sécurité en combinant plusieurs techniques afin d'identifier les services exposés, les technologies utilisées, les mauvaises configurations de sécurité ainsi que les vulnérabilités publiques connues.
 
+<img width="972" height="338" alt="Capture d&#39;écran 2026-07-23 131125" src="https://github.com/user-attachments/assets/f5c5a92e-2bca-4498-950c-29e9e0ba3001" />
+
 ---
 
 # Features
@@ -145,6 +147,10 @@ Each finding contains:
 - Confirmed CVEs only
 
 ---
+
+# Exemple Result :
+
+<img width="627" height="231" alt="Capture d&#39;écran 2026-07-23 131348" src="https://github.com/user-attachments/assets/dae1c11d-c893-4a16-862c-1eaf2ab1557b" />
 
 # Installation
 
